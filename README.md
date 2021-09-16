@@ -6,8 +6,14 @@ A testing library that allows you to test input and outputs of your CLI command.
 
 ## Installation
 
+With NPM:
 ```sh
-npm install --save cli-testing-library # yarn add cli-testing-library
+npm install --save-dev cli-testing-library 
+```
+
+With Yarn:
+```sh
+yarn add --dev cli-testing-library
 ```
 
 ## Example
