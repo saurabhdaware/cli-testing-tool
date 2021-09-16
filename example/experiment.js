@@ -8,10 +8,5 @@ readline.question(`What's your name?`, (name) => {
   readline.question(`What's your age?`, (age) => {
     console.log(`So you are ${age}!`);
     readline.close();
-
-    // readline.question(`suppp?`, (nm) => {
-    //   console.log(`Yooo, ${nm}`);
-    //   readline.close();
-    // });
   });
 });
