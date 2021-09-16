@@ -3,7 +3,7 @@
 A testing library that allows you to test input and outputs of your CLI command.
 
 ```js
-const { createCommandInterface } = require('../lib');
+const { createCommandInterface } = require('cli-testing-library');
 
 test('should print appropriate greetings', async () => {
   const commandInterface = createCommandInterface('node ./experiment.js', {
