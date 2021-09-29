@@ -1,8 +1,9 @@
+const path = require('path');
 const { createCommandInterface } = require('../lib');
 
 test('should pass', async () => {
   const commandInterface = createCommandInterface('node ./experiment.js', {
-    cwd: __dirname
+    cwd: path.join(__dirname, '..', 'cli-examples'),
   });
   await commandInterface.type('Saurabh\n22\n');
   const terminal = await commandInterface.getOutput();
