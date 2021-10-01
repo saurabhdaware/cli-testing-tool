@@ -13,7 +13,7 @@ test('should pass', async () => {
   const commandInterface = createCommandInterface('node ./prompts.js', {
     cwd: path.join(__dirname, '..', 'cli-examples'),
   });
-  await commandInterface.type('12\n');
+  await commandInterface.type('19\n');
   const terminal = await commandInterface.getOutput();
   console.log('=====');
   console.dir(terminal.stringOutput);
