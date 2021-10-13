@@ -1,9 +1,9 @@
 const path = require('path');
-const { createCommandInterface } = require('../lib');
+const { createCommandInterface } = require('../../lib');
 
 test('should pass', async () => {
   const commandInterface = createCommandInterface('node ./simple-print.js', {
-    cwd: path.join(__dirname, '..', 'cli-examples'),
+    cwd: path.join(__dirname, '..'),
   });
   await commandInterface.type('Saurabh\n');
   await commandInterface.type('22\n');
