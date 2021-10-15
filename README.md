@@ -28,42 +28,39 @@ With Yarn:
 yarn add --dev cli-testing-library
 ```
 
-## Example
+## Examples
 
-**Test file**
+Check out [Interactive Examples on Stackblitz](https://stackblitz.com/edit/node-kfod5b?file=examples%2Fprompts%2Fprompts.test.js)
+
+### Hello World Example
+
 ```js
-// experiment.test.js
+// hello-world.test.js
 const { createCommandInterface } = require('cli-testing-library');
 
-test('should print appropriate greetings', async () => {
-  const commandInterface = createCommandInterface('node ./experiment.js', {
-    cwd: __dirname
+test('should print greetings', async () => {
+  const commandInterface = createCommandInterface('node ./hello-world.js', {
+    cwd: __dirname, // Directory from where you want to run the command 
   });
   await commandInterface.type('Saurabh\n');
-  await commandInterface.type('22\n');
   const terminal = await commandInterface.getOutput();
-
-  expect(terminal.textAfter("What's your name?")).toBe('Hi, Saurabh!');
-  expect(terminal.textAfter("What's your age?")).toBe('So you are 22!');
+  expect(terminal.stringOutput).toBe("What's your name?Hi, Saurabh!");
 });
 ```
 
-**Code that is being tested**
-A node program that asks user for their name and age, and then prints a greeting.
-
+The code that we're testing-
 ```js
-// experiment.js
+// hello-world.js
 const readline = require('readline').createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 readline.question(`What's your name?`, (name) => {
   console.log(`Hi, ${name}!`);
-  readline.question(`What's your age?`, (age) => {
-    console.log(`So you are ${age}!`);
-    readline.close();
-  });
+  readline.close();
 });
 
 ```
+
+Check out [More Examples on Stackblitz](https://stackblitz.com/edit/node-kfod5b?file=examples%2Fprompts%2Fprompts.test.js)
