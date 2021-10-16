@@ -1,7 +1,7 @@
 const path = require('path');
 const { createCommandInterface } = require('../../lib');
 
-test('should pass', async () => {
+test('should block 12 year old', async () => {
   const commandInterface = createCommandInterface('node ./prompts.js', {
     cwd: path.join(__dirname, '..'),
   });
