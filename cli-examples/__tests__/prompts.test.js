@@ -15,3 +15,12 @@ test('should block 12 year old', async () => {
     `? How old are you? ${FORWARD_ARROW} 12\n${FORWARD_ARROW} Nightclub is 18+ only`
   );
 });
+
+test('should allow 20 year old', async () => {
+  const commandInterface = createCommandInterface('node ./prompts.js', {
+    cwd: path.join(__dirname, '..')
+  });
+  await commandInterface.type('20\n');
+  const terminal = await commandInterface.getOutput();
+  expect(terminal.stringOutput).toBe('✔ How old are you? … 20\n{ value: 20 }');
+});
