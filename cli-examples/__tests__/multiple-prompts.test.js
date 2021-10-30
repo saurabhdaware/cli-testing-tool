@@ -1,6 +1,9 @@
 const path = require('path');
 const { createCommandInterface } = require('../../lib');
 
+const CHECK_MARK = '\u2714';
+const THREE_DOTS = '\u2026';
+
 test('should pass', async () => {
   const commandInterface = createCommandInterface(
     'node ./multiple-prompts.js',
@@ -13,9 +16,9 @@ test('should pass', async () => {
   const terminal = await commandInterface.getOutput();
   expect(terminal.stringOutput).toBe(
     [
-      '✔ How old are you? … 19',
+      `${CHECK_MARK} How old are you? ${THREE_DOTS} 19`,
       '{ value: 19 }',
-      '✔ What is your name? … saurabh',
+      `${CHECK_MARK} What is your name? ${THREE_DOTS} saurabh`,
       "{ value: 'saurabh' }"
     ].join('\n')
   );
