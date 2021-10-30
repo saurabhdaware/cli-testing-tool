@@ -10,7 +10,7 @@ test('should block 12 year old', async () => {
   });
   await commandInterface.type('12\n');
   const terminal = await commandInterface.getOutput();
-  expect(terminal.stringOutput).toBe(
+  expect(terminal.stringOutput.replace(/  /g, '')).toBe(
     // eslint-disable-next-line max-len
     `? How old are you? ${FORWARD_ARROW} 12\n${FORWARD_ARROW} Nightclub is 18+ only`
   );

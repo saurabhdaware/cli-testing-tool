@@ -8,8 +8,8 @@ A testing library that allows you to test input and outputs of your CLI command.
 Refer to [Full List of Ansi Escape Codes](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797) that need to be handled.
 - [x] Normal text without ansi escape codes
 - [x] Colored text (Not thouroughly tested)
-- [ ] Cursor movement (Basic Support. Not tested)
-- [ ] Erase Line/Screen Clear (Basic Support. Not tested)
+- [x] Cursor movement (Basic Support. Not tested)
+- [x] Erase Line/Screen Clear (Basic Support. Not tested)
 - [ ] Screen Modes (No Support)
 - [ ] Private Modes (No Support)
 - [ ] Multiple Arguments (No Support. Difficult to support this)
@@ -64,3 +64,8 @@ readline.question(`What's your name?`, (name) => {
 ```
 
 Check out [More Examples on Stackblitz](https://stackblitz.com/edit/node-kfod5b?file=examples%2Fprompts%2Fprompts.test.js)
+
+
+Big Shoutout to 
+- [@fnky](https://github.com/fnky) for the [list of all ansi escape codes](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797)
+- [@netzkolchose](https://github.com/netzkolchose) for [node-ansiterminal](https://github.com/netzkolchose/node-ansiterminal) library.

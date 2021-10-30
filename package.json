@@ -25,5 +25,9 @@
     "jest": "^27.2.0",
     "prettier": "^2.0.5",
     "prompts": "^2.4.1"
+  },
+  "dependencies": {
+    "node-ansiparser": "^2.2.0",
+    "node-ansiterminal": "^0.2.1-beta"
   }
 }
