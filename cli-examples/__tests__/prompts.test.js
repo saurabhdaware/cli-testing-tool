@@ -1,7 +1,8 @@
 const path = require('path');
 const { createCommandInterface } = require('../../lib');
 
-const FORWARD_ARROW = '\u203A';
+// Windows is just weird.
+const FORWARD_ARROW = process.platform === 'win32' ? '»' : '›';
 
 test('should block 12 year old', async () => {
   const commandInterface = createCommandInterface('node ./prompts.js', {
