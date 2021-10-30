@@ -1,6 +1,6 @@
 const path = require('path');
 const { createCommandInterface } = require('../../lib');
-const { CHECK_MARK, THREE_DOTS } = require('./utils/icons');
+const { CHECK_MARK, THREE_DOTS } = require('../test-utils/icons');
 
 test('should pass', async () => {
   const commandInterface = createCommandInterface(

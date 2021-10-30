@@ -1,6 +1,10 @@
 const path = require('path');
 const { createCommandInterface } = require('../../lib');
-const { FORWARD_ARROW, CHECK_MARK, THREE_DOTS } = require('./utils/icons');
+const {
+  FORWARD_ARROW,
+  CHECK_MARK,
+  THREE_DOTS
+} = require('../test-utils/icons');
 
 test('should block 12 year old', async () => {
   const commandInterface = createCommandInterface('node ./prompts.js', {
