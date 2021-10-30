@@ -32,7 +32,7 @@ yarn add --dev cli-testing-library
 
 Check out [Interactive Examples on Stackblitz](https://stackblitz.com/edit/node-kfod5b?file=examples%2Fprompts%2Fprompts.test.js)
 
-### Hello World Example
+### Eg 1: Hello World Example
 
 ```js
 // hello-world.test.js
@@ -63,7 +63,28 @@ readline.question(`What's your name?`, (name) => {
 
 ```
 
-Check out [More Examples on Stackblitz](https://stackblitz.com/edit/node-kfod5b?file=examples%2Fprompts%2Fprompts.test.js)
+### Eg 2: Tokenized Output
+
+Check out [this example of StackBlitz](https://stackblitz.com/edit/node-kfod5b?file=examples%2Fcolored-output%2Fcolored-output.test.js)
+
+Sometimes you may want to test if the output has correct color and graphics. You can use the `.tokenizedOutput` method to get tokens in the output.
+
+Check out [list of tokens](https://github.com/saurabhdaware/cli-testing-library/blob/18e1e12d86cec7b429f949cdd571b13b64fd4747/lib/cli-ansi-parser.js#L28) that library outputs.
+
+```js
+// colored-output.test.js
+const { createCommandInterface } = require('cli-testing-library');
+
+test('should have bold red text', async () => {
+  const commandInterface = createCommandInterface('node ./colored-output.js', {
+    cwd: __dirname,
+  });
+  const terminal = await commandInterface.getOutput();
+  expect(terminal.tokenizedOutput).toBe("This has a [BOLD_START][RED_START]red and bold[COLOR_END][BOLD_END] text.");
+});
+```
+
+[More Examples on Stackblitz](https://stackblitz.com/edit/node-kfod5b?file=examples%2Fprompts%2Fprompts.test.js)
 
 
 Big Shoutout to 
