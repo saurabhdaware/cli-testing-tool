@@ -1,8 +1,6 @@
 const path = require('path');
 const { createCommandInterface } = require('../../lib');
-
-// Windows is just weird.
-const FORWARD_ARROW = process.platform === 'win32' ? '»' : '›';
+const { FORWARD_ARROW, CHECK_MARK, THREE_DOTS } = require('./utils/icons');
 
 test('should block 12 year old', async () => {
   const commandInterface = createCommandInterface('node ./prompts.js', {
@@ -22,5 +20,7 @@ test('should allow 20 year old', async () => {
   });
   await commandInterface.type('20\n');
   const terminal = await commandInterface.getOutput();
-  expect(terminal.stringOutput).toBe('✔ How old are you? … 20\n{ value: 20 }');
+  expect(terminal.stringOutput).toBe(
+    `${CHECK_MARK} How old are you? ${THREE_DOTS} 20\n{ value: 20 }`
+  );
 });

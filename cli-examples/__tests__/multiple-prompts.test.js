@@ -1,8 +1,6 @@
 const path = require('path');
 const { createCommandInterface } = require('../../lib');
-
-const CHECK_MARK = process.platform === 'win32' ? '√' : '✔';
-const THREE_DOTS = process.platform === 'win32' ? '...' : '…';
+const { CHECK_MARK, THREE_DOTS } = require('./utils/icons');
 
 test('should pass', async () => {
   const commandInterface = createCommandInterface(
