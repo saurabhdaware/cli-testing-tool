@@ -1,3 +1,10 @@
 cli-examples
 node_modules
 tests
+.prettierrc
+.prettierignore
+.husky
+.github
+.eslintrc.js
+.eslintignore
+.vscode
