@@ -20,12 +20,12 @@ Refer to [Full List of Ansi Escape Codes](https://gist.github.com/fnky/458719343
 
 With NPM:
 ```sh
-npm install --save-dev cli-testing-library 
+npm install --save-dev cli-testing-tools 
 ```
 
 With Yarn:
 ```sh
-yarn add --dev cli-testing-library
+yarn add --dev cli-testing-tools
 ```
 
 ## Examples
@@ -36,7 +36,7 @@ Check out [Interactive Examples on Stackblitz](https://stackblitz.com/edit/node-
 
 ```js
 // hello-world.test.js
-const { createCommandInterface } = require('cli-testing-library');
+const { createCommandInterface } = require('cli-testing-tools');
 
 test('should print greetings', async () => {
   const commandInterface = createCommandInterface('node ./hello-world.js', {
@@ -69,11 +69,11 @@ Check out [this example of StackBlitz](https://stackblitz.com/edit/node-kfod5b?f
 
 Sometimes you may want to test if the output has correct color and graphics. You can use the `.tokenizedOutput` method to get tokens in the output.
 
-Check out [list of tokens](https://github.com/saurabhdaware/cli-testing-library/blob/18e1e12d86cec7b429f949cdd571b13b64fd4747/lib/cli-ansi-parser.js#L28) that library outputs.
+Check out [list of tokens](https://github.com/saurabhdaware/cli-testing-tools/blob/18e1e12d86cec7b429f949cdd571b13b64fd4747/lib/cli-ansi-parser.js#L28) that library outputs.
 
 ```js
 // colored-output.test.js
-const { createCommandInterface } = require('cli-testing-library');
+const { createCommandInterface } = require('cli-testing-tools');
 
 test('should have bold red text', async () => {
   const commandInterface = createCommandInterface('node ./colored-output.js', {
