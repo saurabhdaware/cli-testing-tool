@@ -1,4 +1,4 @@
-# [WIP] CLI Testing Library
+# [WIP] CLI Testing Tool
 
 A testing library that allows you to test input and outputs of your CLI command.
 
