@@ -1,6 +1,10 @@
 const path = require('path');
 const { createCommandInterface } = require('../../lib');
-const { FORWARD_ARROW, THREE_DOTS } = require('../test-utils/icons');
+const {
+  FORWARD_ARROW,
+  THREE_DOTS,
+  SELECT_ICON
+} = require('../test-utils/icons');
 
 test('select', async () => {
   const commandInterface = createCommandInterface('node ./select.js', {
@@ -9,7 +13,8 @@ test('select', async () => {
   });
   const terminalBeforeDownArrow = await commandInterface.getOutput();
   expect(terminalBeforeDownArrow.stringOutput).toMatch(
-    `? test:${THREE_DOTS} \n? test:${FORWARD_ARROW} \n❯test 1\ntest 2`
+    // eslint-disable-next-line max-len
+    `? test:${THREE_DOTS} \n? test:${FORWARD_ARROW} \n${SELECT_ICON}test 1\ntest 2`
   );
   expect(terminalBeforeDownArrow.stringOutput).toMatch('');
   // move to next item
@@ -17,7 +22,7 @@ test('select', async () => {
   const terminalAfterDownArrow = await commandInterface.getOutput();
   expect(terminalAfterDownArrow.stringOutput).toMatch(
     // eslint-disable-next-line max-len
-    `? test:${THREE_DOTS} \n? test:${FORWARD_ARROW} \n❯test 1\n? test:${FORWARD_ARROW} \ntest 1\n❯test 2`
+    `? test:${THREE_DOTS} \n? test:${FORWARD_ARROW} \n${SELECT_ICON}test 1\n? test:${FORWARD_ARROW} \ntest 1\n${SELECT_ICON}test 2`
   );
   expect(1).toBe(1);
 });
