@@ -15,7 +15,7 @@ const questions = [
         value: 'test2'
       }
     ],
-    limit: 10
+    limit: 4
   }
 ];
 
