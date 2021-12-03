@@ -1,7 +1,5 @@
 # CLI Testing Tool
 
-// test
-
 A testing library that allows you to test input and outputs of your CLI command.
 
 *Note: This is WIP but it should be ready enough for most common CLI use-cases I can think of*
