@@ -8,3 +8,5 @@ tests
 .eslintrc.js
 .eslintignore
 .vscode
+playground.js
+lib/__tests__/
